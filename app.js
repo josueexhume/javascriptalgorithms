@@ -62,9 +62,10 @@ function harmlessRansomNote(noteText, magazineText) {
 var isPalindromeAlgorithm = (function(){
   // a palindrome is a word or sentence that's spelled the sames foward and backward, like racecar or madam, i'm adam
   function isPalindrome (string){
-    var stringFormatted = string.replace(/['|.|\s|,]/g, '');
-    var stringReversed = string.replace(/['|.|\s|,]/g, '').split("").reverse().join("");
-
+    var stringFormatted = string.toLowerCase().replace(/[^a-zA-Z]/g, ''); // replace all non letters
+    var stringReversed = string.toLowerCase().replace(/[^a-zA-Z]/g, '').split("").reverse().join("");
+    console.log(stringFormatted);
+    console.log(stringReversed);
     return stringFormatted === stringReversed;
   }
   console.log(isPalindrome("madam i'm adam"));
