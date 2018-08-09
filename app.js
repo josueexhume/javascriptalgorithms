@@ -92,6 +92,7 @@ var isPalindromeAlgorithm = (function () {
 
 var caesarCipherAlgorithm = (function () {
 
+  // shift each letter in the string by number passed in so if parameter is 'abc', 2 then output is 'cde'
   function caesarCipher(str, num) {
     num = num % 26;
 
