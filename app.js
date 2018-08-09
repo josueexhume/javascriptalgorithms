@@ -134,3 +134,33 @@ var caesarCipherAlgorithm = (function () {
   // console.log(caesarCipher("Javascript", -900));
 
 })();
+
+
+var reverseWordsAlgorithm = (function () {
+  //reverse each word in a string, this doesnt reverse the string itself, but each word
+  function reverseWords(string) {
+    var words = string.split(" ");
+    var finalString = "";
+
+    words.forEach(function (word) {
+      var currentWord = word.split("");
+      for (let j = 0; j < Math.floor(currentWord.length / 2); j++) {
+        var temptLetterStart = currentWord[j];
+        var temptLetterEnd = currentWord[currentWord.length - (j + 1)];
+        currentWord[j] = temptLetterEnd;
+        currentWord[currentWord.length - (j + 1)] = temptLetterStart;
+
+        if (currentWord.length % 2 > 0) { // has remainder so it odd, so it has a middle index
+          if (j == Math.ceil(currentWord.length / 2)) {
+            continue;
+          }
+        }
+      }
+      finalString += currentWord.join("") + " ";
+    });
+    return finalString;
+  }
+
+  //uncomment to run
+  //console.log(reverseString("this is a string of words"));
+})();
