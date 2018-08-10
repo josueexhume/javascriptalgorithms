@@ -149,12 +149,6 @@ var reverseWordsAlgorithm = (function () {
         var temptLetterEnd = currentWord[currentWord.length - (j + 1)];
         currentWord[j] = temptLetterEnd;
         currentWord[currentWord.length - (j + 1)] = temptLetterStart;
-
-        if (currentWord.length % 2 > 0) { // has remainder so it odd, so it has a middle index
-          if (j == Math.ceil(currentWord.length / 2)) {
-            continue;
-          }
-        }
       }
       finalString += currentWord.join("") + " ";
     });
@@ -162,7 +156,7 @@ var reverseWordsAlgorithm = (function () {
   }
 
   //uncomment to run
-  //console.log(reverseString("this is a string of words"));
+  console.log(reverseWords("this is a string of words"));
 })();
 
 
