@@ -248,3 +248,26 @@ var meanMedianModeAlgorithm = (function () {
   //console.log(meanMedianMode([1,2,3,4,5,4,6,1]));
   //console.log(meanMedianMode([9,10,23,10,23,9]));
 })();
+
+
+var twoSumAlgorithm = (function () {
+
+  //returns every pair of numbers that adds up to a given sum
+  function twoSum(numArray, sum) {
+    var result = [];
+    var hashTable = [];
+      for (let i = 0; i < numArray.length; i++) {
+        var currNum = numArray[i];
+        var counterPart = sum - currNum;
+        if(hashTable.indexOf(counterPart) > -1){
+          result.push([currNum, counterPart]);
+        } 
+        hashTable.push(numArray[i]);
+      }
+
+    return result;
+  }
+
+  //uncomment to run
+  //console.log(twoSum([1,6,4,5,3,3], 7));
+})();
